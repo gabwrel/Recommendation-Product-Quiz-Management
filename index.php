@@ -1,7 +1,6 @@
 <?php
     session_start();
     $pageTitle = "Quiz";
-    include 'header.php';
     include 'db.php';
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {

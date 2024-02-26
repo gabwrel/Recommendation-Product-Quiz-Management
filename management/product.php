@@ -36,9 +36,8 @@
     $result = mysqli_query($conn, $query);
 ?>
 
-<div class="container w-75 my-3">
+<div class="container container-body" style="padding-top: 128px;">
     <h1 class="text-center fw-bold mt-4">Product Management</h1>
-    <hr style="height:1px;border-width:0;color:gray;background-color:gray">
     <?php include 'product_nav.php';?>
     <form class="form-inline d-inline">
         <select class="custom-select mr-3" name="category" id="category" onchange="this.form.submit()">
@@ -57,13 +56,13 @@
     </form>
     <button class="btn btn-dark float-end mb-2 me-5" data-bs-toggle="modal" data-bs-target="#addProductModal">Add Product</button>
 </div>
-<div class="container w-100">
+<div class="container container-body">
     <div class="table-responsive">
         <table class="table table-hover">
             <thead class="text-center">
                 <tr>
                     <th scope="col">Product Name</th>
-                    <th scope="col">Category</th>
+                    <th scope="col">Category</th>   
                     <th scope="col">Action</th>
                 </tr>
             </thead>
@@ -170,7 +169,7 @@
 </div>
 
 <!-- Pagination -->
-<div class="container w-75">
+<div class="container w-75" style="padding-left: 256px;">
     <ul class="pagination justify-content-center">
         <?php
         $totalRecordsQuery = "SELECT COUNT(*) AS totalRecords FROM product";
@@ -240,3 +239,16 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@2.0.1/dist/js/multi-select-tag.js"></script>
+
+
+<style>
+    .container-body {
+        padding-left: 256px;
+    }
+
+    @media only screen and (max-width: 640px) {
+        .container-body {
+            padding-left: 0px;
+        }
+    }
+</style>

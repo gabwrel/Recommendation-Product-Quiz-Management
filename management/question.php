@@ -42,7 +42,7 @@
     $result = mysqli_query($conn, $query);
 ?>
 
-<div class="container w-75 my-3">
+<div class="container container-body" style="padding-top: 128px;">
     <h1 class="text-center fw-bold mt-4">Questionnaire Management</h1>
     <form class="form-inline d-inline">
         <select class="custom-select mr-3" name="category" id="category" onchange="this.form.submit()">
@@ -61,7 +61,7 @@
     </form>
     <button class="btn btn-dark float-end mb-2" data-bs-toggle="modal" data-bs-target="#addQuestionModal">Add Question</button>
 </div>
-<div class="container w-75">
+<div class="container container-body">
     <div class="table-responsive">
         <table class="table table-hover">
             <thead class="text-center">
@@ -188,7 +188,7 @@
                                                 <div class="row">
                                                 <div class="col">
                                                     <label for="numberOptions">Number of Options:</label>
-                                                    <select name="numOptions" class="form-control w-100" required>
+                                                    <select name="numOptions" class="form-control" required>
                                                         <?php
                                                         for ($i = 0; $i <= 5; $i++) {
                                                             echo "<option value=\"$i\"";
@@ -200,7 +200,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <label for="minAnswer">Minimum Number of Answers:</label>
-                                                    <select name="minAnswer" class="form-control w-100" required>
+                                                    <select name="minAnswer" class="form-control" required>
                                                         <?php
                                                         for ($i = 0; $i <= 5; $i++) {
                                                             echo "<option value=\"$i\"";
@@ -255,7 +255,7 @@
 </div>
 
 <!-- Pagination -->
-<div class="container w-75">
+<div class="container-body">
     <ul class="pagination justify-content-center">
         <?php
         $totalRecordsQuery = "SELECT COUNT(*) AS totalRecords FROM parent_question";
@@ -293,7 +293,7 @@
                 <form action="functions.php" method="post" id="questionForm">
                 <div class="main-form">
                     <label for="mainForm_category">Choose Category</label>
-                    <select name="category" id="mainForm_category" class="form-control w-100" onchange="toggleInputs('mainForm')">
+                    <select name="category" id="mainForm_category" class="form-control" onchange="toggleInputs('mainForm')">
                         <option value="">Select category</option>
                         <?php
                             $categoryQuery = "SELECT * FROM category";
@@ -312,7 +312,7 @@
                     <div class="row">
                         <div class="col">
                             <label for="mainForm_numOptions">Number of Options</label>
-                            <select name="numOptions" id="mainForm_numOptions" class="form-control w-100" onchange="addAnswerInputs('mainForm')" required disabled>
+                            <select name="numOptions" id="mainForm_numOptions" class="form-control " onchange="addAnswerInputs('mainForm')" required disabled>
                                 <option value="0">0</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -323,7 +323,7 @@
                         </div>
                         <div class="col">
                             <label for="mainForm_numAnswer">Minimum Number of Answers</label>
-                            <select name="numAnswer" id="mainForm_numAnswer" class="form-control w-100" required disabled>
+                            <select name="numAnswer" id="mainForm_numAnswer" class="form-control" required disabled>
                                 <option value="0">0</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -404,7 +404,7 @@
                     $('.new-forms').append(`<div class="main-form my-5">
                         <button class="float-end remove-btn btn btn-danger mb-1" type="button">Remove</button>
                         <label for="${formPrefix}_category">Choose Category</label>
-                        <select name="category" id="${formPrefix}_category" class="form-control w-100" onchange="toggleInputs('${formPrefix}')">
+                        <select name="category" id="${formPrefix}_category" class="form-control" onchange="toggleInputs('${formPrefix}')">
                             ${data}
                         </select>
                         <label for="${formPrefix}_parentQuestion">Question:</label>
@@ -412,7 +412,7 @@
                         <div class="row">
                             <div class="col">
                                 <label for="${formPrefix}_numOptions">Number of Options</label>
-                                <select name="numOptions" id="${formPrefix}_numOptions" class="form-control w-100" onchange="addAnswerInputs('${formPrefix}')" required disabled>
+                                <select name="numOptions" id="${formPrefix}_numOptions" class="form-control " onchange="addAnswerInputs('${formPrefix}')" required disabled>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -422,7 +422,7 @@
                             </div>
                             <div class="col">
                                 <label for="${formPrefix}_numAnswer">Minimum Number of Answers</label>
-                                <select name="numAnswer" id="${formPrefix}_numAnswer" class="form-control w-100" required disabled>
+                                <select name="numAnswer" id="${formPrefix}_numAnswer" class="form-control " required disabled>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -462,3 +462,15 @@
         }
     }
 </script>
+
+<style>
+    .container-body {
+        padding-left: 256px;
+    }
+
+    @media only screen and (max-width: 640px) {
+        .container-body {
+            padding-left: 0px;
+        }
+    }
+</style>
