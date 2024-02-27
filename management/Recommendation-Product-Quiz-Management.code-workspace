@@ -2,10 +2,9 @@
 	"folders": [
 		{
 			"path": ".."
-		},
-		{
-			"path": "../../../../Users/JohnGabriel/Documents/Github/ADA-Quiz-Maker/assets/images"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Recommendation-Product-Quiz-Management"
+	}
 }

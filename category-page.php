@@ -21,12 +21,22 @@
     }
 </style>
 <div class="container text-center w-75">
-    <h3>READY FOR A</h3>
-    <h1>QUIZ?</h1>
-    <small><?php echo $categoryName; ?></small>
-    <br>
-    <p><?php echo $categoryDescription;?></p>
-    <a href="quiz.php" class="btn btn-primary rounded-pill">Click to start</a>
+    <div class="container">
+        <h3>READY FOR A</h3>
+        <h1>QUIZ?</h1>
+    </div>
+
+    <div class="container">
+        <small><?php echo $categoryName; ?></small>
+    </div>
+
+    <div class="container">
+        <p><?php echo $categoryDescription;?></p>
+    </div>
+
+    <div class="container">
+        <a href="quiz.php" class="btn btn-primary rounded-pill">Click to start</a>
+    </div>
 </div>
 
 <?php
